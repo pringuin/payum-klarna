@@ -1,0 +1,34 @@
+{
+    "name": "pringuin/payum-klarna-co",
+    "type": "library",
+    "description": "The Payum extension. It provides Klarna Checkout payment integration.",
+    "keywords": [
+        "payment",
+        "klarna"
+    ],
+    "homepage": "https://pringuin.de/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dominik Pfaffenbauer",
+            "email": "dominik@pfaffenbauer.at",
+            "homepage": "https://www.pfaffenbauer.at/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "payum/core": "^1.5",
+        "klarna/kco_rest": "^4.2.0"
+    },
+    "require-dev": {
+
+    },
+    "autoload": {
+        "psr-4": { "Pringuin\\Payum\\KlarnaCO\\": "" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
