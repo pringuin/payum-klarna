@@ -6,6 +6,7 @@ use Klarna\Rest\Transport\ConnectorInterface;
 use Payum\Core\Bridge\Spl\ArrayObject;
 use Payum\Core\GatewayFactory;
 use Pringuin\Payum\KlarnaCO\Action\Api\AckOrderAction;
+use Pringuin\Payum\KlarnaCO\Action\Api\CaptureOrderAction;
 use Pringuin\Payum\KlarnaCO\Action\Api\CreateOrderAction;
 use Pringuin\Payum\KlarnaCO\Action\Api\FetchOrderAction;
 use Pringuin\Payum\KlarnaCO\Action\Api\FetchOrderManagementOrderAction;
@@ -46,6 +47,7 @@ class KlarnaCOGatewayFactory extends GatewayFactory
             'payum.action.api.update_order' => new UpdateOrderAction(),
             'payum.action.api.fetch_order' => new FetchOrderAction(),
             'payum.action.api.ack_order' => new AckOrderAction(),
+            'payum.action.api.capture_order' => new CaptureOrderAction(),
 
             'payum.action.api_order_management.fetch_order' => new FetchOrderManagementOrderAction(),
         ));

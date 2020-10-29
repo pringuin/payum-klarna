@@ -20,6 +20,7 @@ use Pringuin\Payum\KlarnaCO\Action\Api\AckOrderAction;
 use Pringuin\Payum\KlarnaCO\Config;
 use Pringuin\Payum\KlarnaCO\Constants;
 use Pringuin\Payum\KlarnaCO\Request\Api\AckOrder;
+use Pringuin\Payum\KlarnaCO\Request\Api\CaptureOrder;
 use Pringuin\Payum\KlarnaCO\Request\Api\CreateOrder;
 
 /**
@@ -103,6 +104,8 @@ class AuthorizeAction implements ActionInterface, GatewayAwareInterface, Generic
 
         if (Constants::STATUS_CHECKOUT_COMPLETE === $model['status']) {
             $this->gateway->execute(new AckOrder($model));
+            $this->gateway->execute(new CaptureOrder($model));
+            $this->gateway->execute(new Sync($model));
         }
     }
 
